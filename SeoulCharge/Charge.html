@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>전기자동차 충전소 위치 정보 (2015250025_서동주)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--부트스트랩-->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet"><!--구글 웹 폰트를 사용-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f465d980b49dbd8c1ce05d64a414d29"></script>
+    <script src="JSCharge.js"></script>
+    <link rel="stylesheet" href="CCharge.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark" style="height:60px;">  <!--navbar 생성-->
+        <a class="navbar-brand">
+            <div class="row">
+                <div class="col">
+                    <img src="https://cdn-icons.flaticon.com/png/512/3170/premium/3170325.png?token=exp=1635090661~hmac=9c940f15a9f2d683b2666459321e9c9a" alt="logo" style="width:45px;">
+                </div>
+                <div class="col">
+                    <h3 style = "color:rgb(255, 255, 255); font-family: 'Do Hyeon', sans-serif;">
+                        서울시 전기 자동차 충전소
+                    </h3>
+                </div>
+            </div>
+        </a>
+    </nav>
+
+    <div id="map" style="width:100%;height:400px;"></div> 
+
+    <p><!--자치구를 선택하는 컨트롤 생성후 js파일에서 selectLoc함수와 같은 역할 수행-->
+        <select class="form-control bg-secondary text-white" style ="text-align-last:center; font-family: 'Do Hyeon', sans-serif;" id="foregroundColor" onChange="selectLoc(this.value);">
+            <option value="borough" selected="selected">자치구를 선택해 주세요</option>
+            <option value="dobong" >도봉구</option>
+            <option value="nowon">노원구</option>
+            <option value="gangbuk">강북구</option>
+            <option value="seongbuk">성북구</option>
+            <option value="jungrang">중랑구</option>
+            <option value="dongdaemun">동대문구</option>
+            <option value="gwangjin">광진구</option>
+            <option value="seongdong">성동구</option>
+            <option value="yongsan">용산구</option>
+            <option value="mapo">마포구</option>
+            <option value="jung">중구</option>
+            <option value="seodaemun">서대문구</option>
+            <option value="eunpyeong">은평구</option>
+            <option value="jongro">종로구</option>
+            <option value="gangdong">강동구</option>
+            <option value="songpa">송파구</option>
+            <option value="gangnam">강남구</option>
+            <option value="seocho">서초구</option>
+            <option value="dongjak">동작구</option>
+            <option value="gwanak">관악구</option>
+            <option value="geumcheon">금천구</option>
+            <option value="yeongdeungpo">영등포구</option>
+            <option value="guro">구로구</option>
+            <option value="yangcheon">양천구</option>
+            <option value="gangseo">강서구</option>
+        </select>
+    </p>
+<!--컨트롤을 통하여 선택된 구의 상세 주소를 표시하게 될 자리-->
+    <div style="background-color:rgb(250, 255, 253); font-family: 'Do Hyeon', sans-serif;" id = "address"></div>
+</body>
+</html>
